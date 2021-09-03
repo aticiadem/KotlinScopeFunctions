@@ -2,7 +2,8 @@ fun main(args: Array<String>) {
     //letScopeFunction()
     //withScopeFunction()
     //runScopeFunction()
-    applyScopeFunction()
+    //applyScopeFunction()
+    alsoScopeFunction()
 }
 
 private fun letScopeFunction() {
@@ -24,7 +25,7 @@ private fun withScopeFunction() {
     }
 }
 
-private fun runScopeFunction(){
+private fun runScopeFunction() {
     // compute result as block result
     val result = run {
         val x = 10
@@ -42,10 +43,20 @@ private fun runScopeFunction(){
 
 data class Person(var name: String, var age: Int = 0, var city: String = "")
 
-private fun applyScopeFunction(){
+private fun applyScopeFunction() {
     val adem = Person("Adem").apply {
         age = 21
         city = "Kocaeli"
     }
     println(adem)
+}
+
+private fun alsoScopeFunction() {
+    val strList = arrayListOf<Int>(1,2,3,4,5)
+    strList.also {
+        it.add(6)
+        it.add(0,10)
+        println("str length is ${it.size}")
+    }
+    println(strList)
 }
