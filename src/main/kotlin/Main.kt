@@ -1,7 +1,8 @@
 fun main(args: Array<String>) {
     //letScopeFunction()
     //withScopeFunction()
-    runScopeFunction()
+    //runScopeFunction()
+    applyScopeFunction()
 }
 
 private fun letScopeFunction() {
@@ -37,4 +38,14 @@ private fun runScopeFunction(){
         tail.uppercase()
     }
     println("Result2: $result2")
+}
+
+data class Person(var name: String, var age: Int = 0, var city: String = "")
+
+private fun applyScopeFunction(){
+    val adem = Person("Adem").apply {
+        age = 21
+        city = "Kocaeli"
+    }
+    println(adem)
 }
