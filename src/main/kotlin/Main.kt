@@ -1,6 +1,7 @@
 fun main(args: Array<String>) {
     //letScopeFunction()
-    withScopeFunction()
+    //withScopeFunction()
+    runScopeFunction()
 }
 
 private fun letScopeFunction() {
@@ -20,4 +21,20 @@ private fun withScopeFunction() {
         println("We have $size numbers")
         println("Last number is ${last()}")
     }
+}
+
+private fun runScopeFunction(){
+    // compute result as block result
+    val result = run {
+        val x = 10
+        val y = x + 3
+        y - 10
+    }
+    println("Result: $result")
+    // compute result with receiver
+    val result2 = "text".run {
+        val tail = substring(1)
+        tail.uppercase()
+    }
+    println("Result2: $result2")
 }
